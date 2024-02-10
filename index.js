@@ -3,7 +3,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const app = express();
 const connectDB = require("./db/db-connect");
-const { PORT, appUrl } = require("./config/app-config");
+const { PORT, UIAppUrl } = require("./config/app-config");
 
 // Connect MongoDB
 connectDB();
@@ -12,7 +12,7 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 // Init CORS Middleware
-app.use(cors({ origin: appUrl, credentials: true }));
+app.use(cors({ origin: UIAppUrl, credentials: true }));
 
 // Init Cookie Parser Middleware
 app.use(cookieParser());
