@@ -40,6 +40,7 @@ router.post("/", async (req, res) => {
         const token = jwt.sign({ username: user.username }, jwtSecret);
 
         // Save token in cookie
+        console.log("cookieConfig ==>", cookieConfig);
         res.cookie("authcookie", token, cookieConfig);
         res.status(200).json({ success: true, message: "Login successful", user: { username: user.username, primaryColor: user.color } });
     } catch (error) {
