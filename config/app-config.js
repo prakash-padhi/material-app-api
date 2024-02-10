@@ -9,9 +9,11 @@ module.exports = {
 	cookieConfig: {
 		maxAge: 86400000,
 		httpOnly: true,
-		path: "/",
 		sameSite: "none",
 		secure: process.env.NODE_ENV === "production",
-		domain: process.env.NODE_ENV === "production" ? process.env.FRONTEND_APP_URL : "localhost"
+		...(process.env.NODE_ENV !== "production" && {
+			path: "/",
+			domain: "localhost"
+		})
 	}
 };
