@@ -12,6 +12,6 @@ module.exports = {
 		path: "/",
 		sameSite: "strict",
 		secure: process.env.NODE_ENV === "production",
-		domain: process.env.COOKIE_DOMAIN
+		...(process.env.COOKIE_DOMAIN && { domain: process.env.COOKIE_DOMAIN })
 	}
 };
