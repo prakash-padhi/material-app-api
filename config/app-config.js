@@ -11,6 +11,7 @@ module.exports = {
 		httpOnly: true,
 		path: "/",
 		secure: process.env.NODE_ENV === "production",
+		sameSite: "none",
 		...(process.env.NODE_ENV !== "production" && { domain: "localhost" })
 	}
 };
