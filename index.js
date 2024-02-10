@@ -11,6 +11,8 @@ connectDB();
 // Init Express JSON Middleware
 app.use(express.json({ extended: false }));
 
+console.log("UIAppUrl ==>", UIAppUrl);
+
 // Init CORS Middleware
 app.use(cors({ origin: UIAppUrl, credentials: true }));
 
