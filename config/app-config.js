@@ -10,8 +10,8 @@ module.exports = {
 		maxAge: 86400000,
 		httpOnly: true,
 		path: "/",
-		secure: process.env.NODE_ENV === "production",
 		sameSite: "none",
-		...(process.env.NODE_ENV !== "production" && { domain: "localhost" })
+		secure: process.env.NODE_ENV === "production",
+		domain: process.env.NODE_ENV === "production" ? process.env.FRONTEND_APP_URL : "localhost"
 	}
 };
