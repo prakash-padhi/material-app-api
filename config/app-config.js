@@ -10,7 +10,7 @@ module.exports = {
 		maxAge: 86400000,
 		httpOnly: true,
 		path: "/",
-		sameSite: "strict",
+		sameSite: "lax",
 		secure: process.env.NODE_ENV === "production",
 		...(process.env.COOKIE_DOMAIN && { domain: process.env.COOKIE_DOMAIN })
 	}
