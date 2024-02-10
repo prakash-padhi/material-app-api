@@ -12,6 +12,6 @@ module.exports = {
 		path: "/",
 		sameSite: "strict",
 		secure: process.env.NODE_ENV === "production",
-		domain: process.env.NODE_ENV === "production" ? process.env.FRONTEND_APP_URL.replace(/(^\w+:|^)\/\//, '') : "localhost"
+		domain: process.env.COOKIE_DOMAIN
 	}
 };
